@@ -92,7 +92,7 @@ public class Lists {
     /**
      * Metodo por el cual borramos el ArrayList si no esta vacio y cargamos los valores
      */
-    public void cargarListasArrayList()
+    private void cargarListasArrayList()
     {
         //Borramos limpiar la lista
         listArray.clear();
@@ -105,7 +105,7 @@ public class Lists {
     /**
      * Metodo por el cual borramos el LinkedList si no esta vacio y cargamos los valores
      */
-    public void cargarListasLinkList(){
+    private void cargarListasLinkList(){
         
         //Borramos la linkedList
         listLink.clear();
@@ -118,7 +118,7 @@ public class Lists {
      * Insertamos un elemento al final del arrayList
      * @return 
      */
-    public double inserFinalArray()
+    private double inserFinalArray()
     {
         double media = 0;
         //Repetimos N veces
@@ -142,7 +142,7 @@ public class Lists {
      * metodo que insertamos un valor al final del Linked List
      * @return 
      */
-    public double inserFinalLink()
+    private double inserFinalLink()
     {
         double media = 0;
         for (int i=0; i<repet; i++)
@@ -164,7 +164,7 @@ public class Lists {
      * Metodo que insertamos un valor al principio del array List
      * @return 
      */
-    public double inserPrinArray()
+    private double inserPrinArray()
     {
         double media = 0;
         //Repetimos N veces
@@ -188,7 +188,7 @@ public class Lists {
      * Metodo que insertamos un elemento al princio de un Linked List
      * @return 
      */
-     public double inserPrinLink()
+     private double inserPrinLink()
     {
         double media = 0;
         //Recorremos N veces
@@ -213,7 +213,7 @@ public class Lists {
       * Metodo que inserta un elemento en medio de un array List
       * @return 
       */
-    public double inseMediArray()
+    private double inseMediArray()
     {
         double media = 0;
         //recorremos N veces
@@ -237,7 +237,7 @@ public class Lists {
      * Insertamos en el medio en un Linked List
      * @return 
      */
-     public double inseMediLink()
+    private double inseMediLink()
     {
         double media = 0;
         //Repetimos N veces
@@ -261,7 +261,7 @@ public class Lists {
       * Borramos un elemento por posicion al final del ArrayList
       * @return 
       */
-     public double elimFinArray()
+     private double elimFinArray()
      {
         double media = 0;
         //Recorremos N veces
@@ -286,7 +286,7 @@ public class Lists {
       * Eliminamos por posicion al final de un LinkedList
       * @return 
       */
-     public double elimFinLink()
+     private double elimFinLink()
      {
         double media = 0;
         //Repetimos N veces
@@ -310,7 +310,7 @@ public class Lists {
       * Eliminamos por posicion al principio del ArrayList
       * @return 
       */
-      public double elimPrinArray()
+     private double elimPrinArray()
      {
         double media = 0;
         //Recorremos N veces
@@ -335,7 +335,7 @@ public class Lists {
        * Eliminamos por posicion al principio de un Linked Link
        * @return 
        */
-     public double elimPrinLink()
+     private double elimPrinLink()
      {
         double media = 0;
         //recorremos N veces
@@ -359,7 +359,7 @@ public class Lists {
       * Eliminamos por en medio por posicion de un ArrayList
       * @return 
       */
-     public double elimMediArray()
+     private double elimMediArray()
      {
         double media = 0;
         for (int i=0; i<repet; i++)
@@ -379,7 +379,7 @@ public class Lists {
       * Eliminamos por en medio por posicon en un LinkedList
       * @return 
       */
-      public double elimMediLink()
+      private double elimMediLink()
      {
         double media = 0;
         for (int i=0; i<repet; i++)
@@ -400,7 +400,7 @@ public class Lists {
        * @param valor
        * @return 
        */
-      public double elimValorArray(int valor)
+      private double elimValorArray(int valor)
       {
         double media = 0;
          //repetimos N veces         
@@ -426,7 +426,7 @@ public class Lists {
        * @param valor
        * @return 
        */
-        public double elimValorLink(int valor)
+        private double elimValorLink(int valor)
       {
         double media = 0;
         //recorremos N veces        
@@ -475,7 +475,7 @@ public class Lists {
       * @param valor
       * @return 
       */
-       public double busqValorLink(int valor)
+       private double busqValorLink(int valor)
       {
         double media = 0;
                   
@@ -498,7 +498,7 @@ public class Lists {
       * @param valor
       * @return 
       */  
-     public double busqArrayArray(int valor)
+     private double busqArrayArray(int valor)
      {
         double media = 0;
                   
@@ -528,7 +528,7 @@ public class Lists {
       * @param valor
       * @return 
       */
-     public double busqArrayLink(int valor)
+     private double busqArrayLink(int valor)
      {
         double media = 0;
         
@@ -560,7 +560,7 @@ public class Lists {
       * @param valor
       * @return 
       */
-     public double binariArray(int valor)
+     private double binariArray(int valor)
      {
          double media = 0;
          int centro;
@@ -608,7 +608,7 @@ public class Lists {
       * @param valor
       * @return 
       */
-     public double binariLink(int valor)
+     private double binariLink(int valor)
      {
          double media = 0;
          int centro;
@@ -651,7 +651,7 @@ public class Lists {
          return media/repet;
      }
      
-    public  void RunTimes()
+    public void RunTimes()
     {   
         
        cargarListasArrayList();
