@@ -21,6 +21,9 @@ import java.util.Random;
  */
 public class Sort {
     
+    /**
+     * Atributos con las distintas listas que usaremos y otras variables
+     */
     private List<Integer> listaale;
     private  List<Integer> listaCre;
     private  List<Integer> listaDecre;
@@ -31,6 +34,9 @@ public class Sort {
     private long endTime;
     private long duration;
     
+    /**
+     * Constructor por defecto
+     */
     public Sort()
     {
         listaale = new ArrayList<Integer>();
@@ -38,7 +44,10 @@ public class Sort {
         listaDecre = new ArrayList<Integer>();
         listaMismo = new ArrayList<Integer>();
     }
-    
+    /**
+     * Metodo que uso para comprobaciones de listas
+     * @param lista 
+     */
     private void comprobarOrden(List<Integer> lista)
     {
         for (int i = 0; i < lista.size(); i++) {
@@ -46,6 +55,12 @@ public class Sort {
             System.out.println(lista.get(i));
         }
     }
+    /**
+     * Metodo que al pasarle dos listas comprueba sin son iguales
+     * @param lista1
+     * @param lista2
+     * @return 
+     */
     private boolean RunTests(List<Integer> lista1, List<Integer> lista2)
     {
         boolean igual = true;
@@ -67,7 +82,7 @@ public class Sort {
          
     }
     /**
-     * 
+     * Añadimos una lista con valores aleatorios
      */
     private void desOrdenarAleatoria()
     {
@@ -77,6 +92,9 @@ public class Sort {
             listaale.add((int)(rnd.nextDouble() * 1000));
         }
     }
+    /**
+     * Añadimos una lista con valores ordenados
+     */
     private void ordenadaCreciente()
     {
         
@@ -87,6 +105,9 @@ public class Sort {
         }
         
     }
+    /**
+     * Creamos una lista con valores ordenados decrecientemente
+     */
     private void ordenadaDecreciente()
     {
        listaDecre.clear();
@@ -95,6 +116,9 @@ public class Sort {
             listaDecre.add(l);
         } 
     }
+    /**
+     * Creamos una lista con el mismo valor
+     */
     private void listaMismoValor()
     {
         listaMismo.clear();
@@ -103,7 +127,11 @@ public class Sort {
             listaMismo.add(4);
         } 
     }
-    
+    /**
+     * Metodo de ordenacion por burbuja de una lista pasada como parametro
+     * @param lista
+     * @return 
+     */
     private double metodoBurbuja(List<Integer> lista)
     {
         double media = 0;
@@ -142,6 +170,11 @@ public class Sort {
         
     }//FIN METODO BURBUJA
     
+    /**
+     * Metodo de ordenacion por Seleccion de una lista dada por parametro
+     * @param lista
+     * @return 
+     */
     private double metodoSeleccion(List<Integer> lista)
     {
         double media = 0;
@@ -172,7 +205,11 @@ public class Sort {
         return media/cont;
         
     }//FIN METODO SELECCION
-    
+    /**
+     * Metodo de ordenacion por Insercion de una lista dada
+     * @param lista
+     * @return 
+     */
     private double metodoInsercion(List<Integer> lista)
     {
         double media = 0;
@@ -201,7 +238,7 @@ public class Sort {
     }
     
     /**
-     * 
+     * Metodo auxiliar del metodo de ordenacion quick 
      * @param left
      * @param right
      * @return 
@@ -229,7 +266,7 @@ public class Sort {
       return i;
     }
     /**
-     * 
+     * Metodo de ordenacion de una lista por el metodo quicksort
      * @param left
      * @param right 
      */
@@ -241,20 +278,31 @@ public class Sort {
             quickSort(lista,  index, right);
     }
    
-   
+     /**
+      * Metodo de ayuda para la ordenacion por el metodo Merge SOrt
+      * @param lista
+      * @param startIndex
+      * @param endIndex 
+      */
       private  void divide(List<Integer> lista, int startIndex,int endIndex){
          
-        //Divide till you breakdown your list to single element
+        
         if(startIndex<endIndex && (endIndex-startIndex)>=1){
             int mid = (endIndex + startIndex)/2;
             divide(lista, startIndex, mid);
             divide(lista, mid+1, endIndex);        
              
-            //merging Sorted array produce above into one sorted array
+            
             merger(lista, startIndex,mid,endIndex);            
         }       
     }   
-     
+     /**
+      * Metodo de ORdenacion de una lista por el Metodo Merge Sort
+      * @param lista
+      * @param startIndex
+      * @param midIndex
+      * @param endIndex 
+      */
     private void merger(List<Integer> lista, int startIndex,int midIndex,int endIndex){
          
         
@@ -292,6 +340,12 @@ public class Sort {
             j++;
         }
     }
+    /**
+     * Metodo de Busqueda BInaria
+     * @param lista
+     * @param valor
+     * @return 
+     */
     
     private double binariBusqueda(List<Integer> lista, int valor)
      {
@@ -335,6 +389,12 @@ public class Sort {
          //Devolvemos la media de los tiempos
          return media/cont;
      }
+    /**
+     * Metodo de Busqueda secuencial
+     * @param lista
+     * @param valor
+     * @return 
+     */
      private double secuBusqueda(List<Integer> lista,int valor)
      {
         double media = 0;
