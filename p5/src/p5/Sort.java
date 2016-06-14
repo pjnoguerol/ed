@@ -434,7 +434,9 @@ public class Sort {
         
         
        //Metodo Burbuja
+       //PREPARAMOS LA LISTAS CON SUS DATOS CORRESPONDIENTES
        desOrdenarAleatoria();
+       //HACEMOS COPIAS DE LAS LISTAS PARA COMPARAR A POSTERIORI
        listaaleaux = new ArrayList<>(listaale);
        ordenadaCreciente();
        listaCreaux = new ArrayList<>(listaCre);
@@ -443,18 +445,21 @@ public class Sort {
        listaMismoValor();
        listaMismoaux = new ArrayList<>(listaMismo);
        
+       //MOSTRAMOS LOS RESULTADOS DE LOS TIEMPOS
        System.out.println("Tiempo de metodo burbuja para lista aleatoria "+ metodoBurbuja(listaale) );
        System.out.println("Tiempo de metodo burbuja para lista creciente "+ metodoBurbuja(listaCre) );
        System.out.println("Tiempo de metodo burbuja para lista Decreciente "+ metodoBurbuja(listaDecre) );
        System.out.println("Tiempo de metodo burbuja para Lista con mismo valor "+ metodoBurbuja(listaMismo) );
        
+       //MOSTRAMOS LOS RESULTADOS DE LOS TEST UNITARIOS
        System.out.println("TEST UNITARIO burbuja LISTA aleatoria :"+ RunTests(listaaleaux, listaale));
        System.out.println("TEST UNITARIO burbuja LISTA creciente :"+RunTests(listaCreaux, listaCre));
        System.out.println("TEST UNITARIO burbuja LISTA decreciente :"+RunTests(listaDecreaux, listaDecre));
        System.out.println("TEST UNITARIO burbuja Misma lista :"+RunTests(listaMismoaux, listaMismo));
        
-       
+       //PREPARAMOS LA LISTAS CON SUS DATOS CORRESPONDIENTES
        desOrdenarAleatoria();
+       //HACEMOS COPIAS DE LAS LISTAS PARA COMPARAR A POSTERIORI
        listaaleaux = new ArrayList<>(listaale);
        ordenadaCreciente();
        listaCreaux = new ArrayList<>(listaCre);
@@ -462,20 +467,21 @@ public class Sort {
        listaDecreaux = new ArrayList<>(listaDecre);
        listaMismoValor();
        listaMismoaux = new ArrayList<>(listaMismo);
-       
+       //MOSTRAMOS LOS RESULTADOS DE LOS TIEMPOS
        System.out.println("Tiempo de metodo Seleccion para lista aleatoria "+ metodoSeleccion(listaale) );
        System.out.println("Tiempo de metodo Seleccion para lista creciente "+ metodoSeleccion(listaCre) );
        System.out.println("Tiempo de metodo Seleccion para lista Decreciente "+ metodoSeleccion(listaDecre) );
        System.out.println("Tiempo de metodo Seleccion para Lista con mismo valor "+ metodoSeleccion(listaMismo) );
        
-       
+       //MOSTRAMOS LOS RESULTADOS DE LOS TEST UNITARIOS
        System.out.println("TEST UNITARIO Seleccion  LISTA aleatoria :"+ RunTests(listaaleaux, listaale));
        System.out.println("TEST UNITARIO Seleccion  LISTA creciente :"+RunTests(listaCreaux, listaCre));
        System.out.println("TEST UNITARIO Seleccion  LISTA decreciente :"+RunTests(listaDecreaux, listaDecre));
        System.out.println("TEST UNITARIO Seleccion  Misma lista :"+RunTests(listaMismoaux, listaMismo));
        
-       
+       //PREPARAMOS LA LISTAS CON SUS DATOS CORRESPONDIENTES
        desOrdenarAleatoria();
+       //HACEMOS COPIAS DE LAS LISTAS PARA COMPARAR A POSTERIORI
        listaaleaux = new ArrayList<>(listaale);
        ordenadaCreciente();
        listaCreaux = new ArrayList<>(listaCre);
@@ -483,20 +489,21 @@ public class Sort {
        listaDecreaux = new ArrayList<>(listaDecre);
        listaMismoValor();
        listaMismoaux = new ArrayList<>(listaMismo);
-       
+       //MOSTRAMOS LOS RESULTADOS DE LOS TIEMPOS
        System.out.println("Tiempo de metodo Insercion para lista aleatoria "+ metodoInsercion(listaale) );
        System.out.println("Tiempo de metodo Insercion para lista creciente "+ metodoInsercion(listaCre) );
        System.out.println("Tiempo de metodo Insercion para lista Decreciente "+ metodoInsercion(listaDecre) );
        System.out.println("Tiempo de metodo Insercion para Lista con mismo valor "+ metodoInsercion(listaMismo) );
-       
+       //MOSTRAMOS LOS RESULTADOS DE LOS TEST UNITARIOS
        System.out.println("TEST UNITARIO Insercion LISTA aleatoria :"+ RunTests(listaaleaux, listaale));
        System.out.println("TEST UNITARIO Insercion LISTA creciente :"+RunTests(listaCreaux, listaCre));
        System.out.println("TEST UNITARIO Insercion LISTA decreciente :"+RunTests(listaDecreaux, listaDecre));
        System.out.println("TEST UNITARIO Insercion Misma lista :"+RunTests(listaMismoaux, listaMismo));
        
        
-       
+       //PREPARAMOS LA LISTAS CON SUS DATOS CORRESPONDIENTES
        desOrdenarAleatoria();
+       //HACEMOS COPIAS DE LAS LISTAS PARA COMPARAR A POSTERIORI
        listaaleaux = new ArrayList<>(listaale);
        ordenadaCreciente();
        listaCreaux = new ArrayList<>(listaCre);
@@ -509,7 +516,7 @@ public class Sort {
        
         
         
-        
+        //Comprobamos los tiempos de las distintas listas por medio de QUicksort
         double media = 0;
         for(int i=0; i<cont; i++)
         {
@@ -552,15 +559,16 @@ public class Sort {
         }
         System.out.println("Tiempo de metodo quickSort para lista con Mismo valor: " + media/cont);
         
-        
+        //MOSTRAMOS LOS RESULTADOS DE LOS TEST UNITARIOS
         System.out.println("TEST UNITARIO quickSort LISTA aleatoria :"+ RunTests(listaaleaux, listaale));
        System.out.println("TEST UNITARIO quickSort LISTA creciente :"+RunTests(listaCreaux, listaCre));
        System.out.println("TEST UNITARIO quickSort LISTA decreciente :"+RunTests(listaDecreaux, listaDecre));
        System.out.println("TEST UNITARIO quickSort Misma lista :"+RunTests(listaMismoaux, listaMismo));
        
         
-        
-         desOrdenarAleatoria();
+       //PREPARAMOS LA LISTAS CON SUS DATOS CORRESPONDIENTES
+       desOrdenarAleatoria();
+       //HACEMOS COPIAS DE LAS LISTAS PARA COMPARAR A POSTERIORI
        listaaleaux = new ArrayList<>(listaale);
        ordenadaCreciente();
        listaCreaux = new ArrayList<>(listaCre);
@@ -569,6 +577,8 @@ public class Sort {
        listaMismoValor();
        listaMismoaux = new ArrayList<>(listaMismo);
         
+       
+       //Comprobamos los tiempos de las distintas listas por medio de MERGE·SORT
         media = 0;
         for(int i=0; i<cont; i++)
         {
@@ -610,25 +620,28 @@ public class Sort {
         }
         System.out.println("Tiempo de metodo Merge Sort para el mismo numero : " + media/cont);
         
+         //MOSTRAMOS LOS RESULTADOS DE LOS TEST UNITARIOS
         System.out.println("TEST UNITARIO Merge Sort LISTA aleatoria :"+ RunTests(listaaleaux, listaale));
        System.out.println("TEST UNITARIO Merge Sort LISTA creciente :"+RunTests(listaCreaux, listaCre));
        System.out.println("TEST UNITARIO Merge Sort LISTA decreciente :"+RunTests(listaDecreaux, listaDecre));
        System.out.println("TEST UNITARIO Merge Sort Misma lista :"+RunTests(listaMismoaux, listaMismo));
        
-        
+        //RESETEAMOS LAS LISTAS PARA QUE LAS BUSQUEDAS BINARIAS SEAN CORRECTAS
         desOrdenarAleatoria();
         ordenadaCreciente();
         ordenadaDecreciente();
         listaMismoValor();
+        //MOSTRAMOS LOS RESULTADOS DE LAS BUSQUEDAS BINARIAS
         System.out.println("Busqueda Binaria para lista aleatoria "+ binariBusqueda(listaale, 67) );
-       System.out.println("Busqueda Binaria burbuja para lista creciente "+ binariBusqueda(listaCre, 67) );
-       System.out.println("Busqueda Binaria burbuja para lista Decreciente "+ binariBusqueda(listaDecre, 67) );
-       System.out.println("Busqueda Binaria burbuja para Lista con mismo valor "+ binariBusqueda(listaMismo, 67) );
+       System.out.println("Busqueda Binaria  para lista creciente "+ binariBusqueda(listaCre, 67) );
+       System.out.println("Busqueda Binaria  para lista Decreciente "+ binariBusqueda(listaDecre, 67) );
+       System.out.println("Busqueda Binaria  para Lista con mismo valor "+ binariBusqueda(listaMismo, 67) );
        
+       //MOSTRAMOS LOS RESULTADOS DE LAS BUSQUEDAS  SECUENCIAL
        System.out.println("Busqueda Secuencial para lista aleatoria "+ secuBusqueda(listaale, 67) );
-       System.out.println("Busqueda Secuencial burbuja para lista creciente "+ secuBusqueda(listaCre, 67) );
-       System.out.println("Busqueda Secuencial burbuja para lista Decreciente "+ secuBusqueda(listaDecre, 67) );
-       System.out.println("Busqueda Secuencial burbuja para Lista con mismo valor "+ secuBusqueda(listaMismo, 67) );
+       System.out.println("Busqueda Secuencial  para lista creciente "+ secuBusqueda(listaCre, 67) );
+       System.out.println("Busqueda Secuencial  para lista Decreciente "+ secuBusqueda(listaDecre, 67) );
+       System.out.println("Busqueda Secuencial  para Lista con mismo valor "+ secuBusqueda(listaMismo, 67) );
         
         
         
