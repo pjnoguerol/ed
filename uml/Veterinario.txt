@@ -1,0 +1,5 @@
+public class Veterinario {
+    
+    public List<Cliente> cliente = new ArrayList<Cliente> ();
+
+}
