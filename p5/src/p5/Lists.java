@@ -11,8 +11,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- *
- * @author informatica
+ * Practica que mide una serie de instrucciones de insercion, borrado, etc sobre unas LISTAS para comprobar los tiempos que tardan en hacer las operaciones
+ * Es importante para la practica repetir la operacion muchas veces , un gran numero de veces para tener resultados correctos sino seria no válido
+ * Los resultados nunca van a dar los mismo exactamente porque depende de muchisimos factores, no hay una situacion normalizada
+ * Depende del ordenador, de los procesos que este realizando la la cpu y los distintos componenentes, del sistema operativo, hay una gran cantidad de variables a tener en cuenta
+ * Lo que si que podemos tener en consideracion es que con la gran cantidad de resultados, podemos tener una idea mas o menos clara de que operaciones son mas eficientes
+ * y dependiendo del caso usar unas u otras.
+ * @author Pablo Javier Noguerol Santalices
  */
 public class Lists {
     /**
