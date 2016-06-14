@@ -15,11 +15,12 @@ import java.util.Random;
  * @author informatica
  */
 public class Sort {
-    public static List<Integer> listaale;
-    public static List<Integer> listaCre;
-    public static List<Integer> listaDecre;
-    public static List<Integer> listaMismo;
-    public static Random rnd = new Random();
+    
+    private List<Integer> listaale;
+    private  List<Integer> listaCre;
+    private  List<Integer> listaDecre;
+    private  List<Integer> listaMismo;
+    private static Random rnd = new Random();
     private final int cont = 1000;
     private long startTime;
     private long endTime;
@@ -40,9 +41,25 @@ public class Sort {
             System.out.println(lista.get(i));
         }
     }
-    private void RunTests()
+    private boolean RunTests(List<Integer> lista1, List<Integer> lista2)
     {
-        
+        boolean igual = true;
+        //Ordenamos el array 1
+        Collections.sort(lista1);
+        //Comparamos que tengan el mismo tamaño
+        if (lista1.size() == lista2.size())
+        {
+        for (int temp : lista1)
+              if(!lista2.contains(temp))
+              {
+                 igual = false;
+                 break;
+              }
+        }
+        else
+            igual = false;
+         return igual;
+         
     }
     /**
      * 
@@ -55,7 +72,7 @@ public class Sort {
             listaale.add((int)(rnd.nextDouble() * 1000));
         }
     }
-    public void ordenadaCreciente()
+    private void ordenadaCreciente()
     {
         
          listaCre.clear();
@@ -65,7 +82,7 @@ public class Sort {
         }
         
     }
-    public void ordenadaDecreciente()
+    private void ordenadaDecreciente()
     {
        listaDecre.clear();
         for (int l = 999; l >= 0; l--) {
@@ -73,7 +90,7 @@ public class Sort {
             listaDecre.add(l);
         } 
     }
-    public void listaMismoValor()
+    private void listaMismoValor()
     {
         listaMismo.clear();
         for (int l = 999; l >= 0; l--) {
@@ -91,7 +108,7 @@ public class Sort {
         
         for (int y = 0; y<cont;y++)
         {
-            listaaux = lista;
+            listaaux = new ArrayList<>(lista);
             startTime = System.nanoTime();
             swapped = true;
             j = 0;
@@ -114,20 +131,20 @@ public class Sort {
             endTime = System.nanoTime();
             duration = endTime - startTime;
             media += duration;
-            lista = listaaux;
+            lista = new ArrayList<>(listaaux);
         }
         return media/cont;
         
     }//FIN METODO BURBUJA
     
-    public double metodoSeleccion(List<Integer> lista)
+    private double metodoSeleccion(List<Integer> lista)
     {
         double media = 0;
         List<Integer> listaaux;
         int i, j, minIndex, tmp, n;
         for (int y=0; y< cont; y++)
         {
-            listaaux = lista;
+            listaaux = new ArrayList<>(lista);
             startTime = System.nanoTime();
             n = lista.size();
             for (i = 0; i < n - 1; i++) {
@@ -145,19 +162,19 @@ public class Sort {
             endTime = System.nanoTime();
             duration = endTime - startTime;
             media+=duration;
-            lista = listaaux;
+            lista = new ArrayList<>(listaaux);
         }
         return media/cont;
         
     }//FIN METODO SELECCION
     
-    public double metodoInsercion(List<Integer> lista)
+    private double metodoInsercion(List<Integer> lista)
     {
         double media = 0;
         List<Integer> listaaux;
         for (int y=0; y< cont; y++)
         {
-            listaaux = lista;
+            listaaux = new ArrayList<>(lista);
             int i, j, newValue;
             startTime = System.nanoTime();
             for (i = 1; i < lista.size(); i++) {
@@ -172,7 +189,7 @@ public class Sort {
             endTime = System.nanoTime();
             duration = endTime - startTime;
             media += duration;
-            lista = listaaux;
+            lista = new ArrayList<>(listaaux);
         }
         return media/cont;
         
@@ -184,7 +201,7 @@ public class Sort {
      * @param right
      * @return 
      */
-    public  int metodoQuick(List<Integer> lista, int left, int right)
+    private int metodoQuick(List<Integer> lista, int left, int right)
     {
       int i = left, j = right;
       int tmp;
@@ -211,7 +228,7 @@ public class Sort {
      * @param left
      * @param right 
      */
-   public  void quickSort(List<Integer> lista, int left, int right) {
+   private  void quickSort(List<Integer> lista, int left, int right) {
       int index = metodoQuick(lista, left, right);
       if (left < index - 1)
             quickSort(lista,  left, index - 1);
@@ -220,7 +237,7 @@ public class Sort {
     }
    
    
-      public  void divide(List<Integer> lista, int startIndex,int endIndex){
+      private  void divide(List<Integer> lista, int startIndex,int endIndex){
          
         //Divide till you breakdown your list to single element
         if(startIndex<endIndex && (endIndex-startIndex)>=1){
@@ -233,9 +250,9 @@ public class Sort {
         }       
     }   
      
-    public  void merger(List<Integer> lista, int startIndex,int midIndex,int endIndex){
+    private void merger(List<Integer> lista, int startIndex,int midIndex,int endIndex){
          
-        //Below is the mergedarray that will be sorted array Array[i-midIndex] , Array[(midIndex+1)-endIndex]
+        
         ArrayList<Integer> mergedSortedArray = new ArrayList<Integer>();
          
         int leftIndex = startIndex;
@@ -251,7 +268,7 @@ public class Sort {
             }
         }       
          
-        //Either of below while loop will execute
+        
         while(leftIndex<=midIndex){
             mergedSortedArray.add(lista.get(leftIndex));
             leftIndex++;
@@ -264,7 +281,7 @@ public class Sort {
          
         int i = 0;
         int j = startIndex;
-        //Setting sorted array to original one
+        
         while(i<mergedSortedArray.size()){
             lista.set(j, mergedSortedArray.get(i++));
             j++;
@@ -342,45 +359,86 @@ public class Sort {
    
     public  void RunTimes()
     {
-        
-      
+      //Creamos unos LIst aux que nos serviran para guardar el array inicial sin ordenar
+      List<Integer> listaaleaux;
+      List<Integer> listaCreaux;
+      List<Integer> listaDecreaux;
+      List<Integer> listaMismoaux;
         
          
         
         
        //Metodo Burbuja
        desOrdenarAleatoria();
+       listaaleaux = new ArrayList<>(listaale);
        ordenadaCreciente();
+       listaCreaux = new ArrayList<>(listaCre);
        ordenadaDecreciente();
+       listaDecreaux = new ArrayList<>(listaDecre);
        listaMismoValor();
+       listaMismoaux = new ArrayList<>(listaMismo);
+       
        System.out.println("Tiempo de metodo burbuja para lista aleatoria "+ metodoBurbuja(listaale) );
        System.out.println("Tiempo de metodo burbuja para lista creciente "+ metodoBurbuja(listaCre) );
        System.out.println("Tiempo de metodo burbuja para lista Decreciente "+ metodoBurbuja(listaDecre) );
        System.out.println("Tiempo de metodo burbuja para Lista con mismo valor "+ metodoBurbuja(listaMismo) );
+       
+       System.out.println("TEST UNITARIO burbuja LISTA aleatoria :"+ RunTests(listaaleaux, listaale));
+       System.out.println("TEST UNITARIO burbuja LISTA creciente :"+RunTests(listaCreaux, listaCre));
+       System.out.println("TEST UNITARIO burbuja LISTA decreciente :"+RunTests(listaDecreaux, listaDecre));
+       System.out.println("TEST UNITARIO burbuja Misma lista :"+RunTests(listaMismoaux, listaMismo));
+       
+       
        desOrdenarAleatoria();
+       listaaleaux = new ArrayList<>(listaale);
        ordenadaCreciente();
+       listaCreaux = new ArrayList<>(listaCre);
        ordenadaDecreciente();
+       listaDecreaux = new ArrayList<>(listaDecre);
        listaMismoValor();
+       listaMismoaux = new ArrayList<>(listaMismo);
        
        System.out.println("Tiempo de metodo Seleccion para lista aleatoria "+ metodoSeleccion(listaale) );
        System.out.println("Tiempo de metodo Seleccion para lista creciente "+ metodoSeleccion(listaCre) );
        System.out.println("Tiempo de metodo Seleccion para lista Decreciente "+ metodoSeleccion(listaDecre) );
        System.out.println("Tiempo de metodo Seleccion para Lista con mismo valor "+ metodoSeleccion(listaMismo) );
+       
+       
+       System.out.println("TEST UNITARIO Seleccion  LISTA aleatoria :"+ RunTests(listaaleaux, listaale));
+       System.out.println("TEST UNITARIO Seleccion  LISTA creciente :"+RunTests(listaCreaux, listaCre));
+       System.out.println("TEST UNITARIO Seleccion  LISTA decreciente :"+RunTests(listaDecreaux, listaDecre));
+       System.out.println("TEST UNITARIO Seleccion  Misma lista :"+RunTests(listaMismoaux, listaMismo));
+       
+       
        desOrdenarAleatoria();
+       listaaleaux = new ArrayList<>(listaale);
        ordenadaCreciente();
+       listaCreaux = new ArrayList<>(listaCre);
        ordenadaDecreciente();
+       listaDecreaux = new ArrayList<>(listaDecre);
        listaMismoValor();
+       listaMismoaux = new ArrayList<>(listaMismo);
+       
        System.out.println("Tiempo de metodo Insercion para lista aleatoria "+ metodoInsercion(listaale) );
        System.out.println("Tiempo de metodo Insercion para lista creciente "+ metodoInsercion(listaCre) );
        System.out.println("Tiempo de metodo Insercion para lista Decreciente "+ metodoInsercion(listaDecre) );
        System.out.println("Tiempo de metodo Insercion para Lista con mismo valor "+ metodoInsercion(listaMismo) );
-       desOrdenarAleatoria();
-       ordenadaCreciente();
-       ordenadaDecreciente();
-       listaMismoValor();
-        
        
-        
+       System.out.println("TEST UNITARIO Insercion LISTA aleatoria :"+ RunTests(listaaleaux, listaale));
+       System.out.println("TEST UNITARIO Insercion LISTA creciente :"+RunTests(listaCreaux, listaCre));
+       System.out.println("TEST UNITARIO Insercion LISTA decreciente :"+RunTests(listaDecreaux, listaDecre));
+       System.out.println("TEST UNITARIO Insercion Misma lista :"+RunTests(listaMismoaux, listaMismo));
+       
+       
+       
+       desOrdenarAleatoria();
+       listaaleaux = new ArrayList<>(listaale);
+       ordenadaCreciente();
+       listaCreaux = new ArrayList<>(listaCre);
+       ordenadaDecreciente();
+       listaDecreaux = new ArrayList<>(listaDecre);
+       listaMismoValor();
+       listaMismoaux = new ArrayList<>(listaMismo);
         
         
        
@@ -429,11 +487,22 @@ public class Sort {
         }
         System.out.println("Tiempo de metodo quickSort para lista con Mismo valor: " + media/cont);
         
-        desOrdenarAleatoria();
-        ordenadaCreciente();
-        ordenadaDecreciente();
-        listaMismoValor();
         
+        System.out.println("TEST UNITARIO quickSort LISTA aleatoria :"+ RunTests(listaaleaux, listaale));
+       System.out.println("TEST UNITARIO quickSort LISTA creciente :"+RunTests(listaCreaux, listaCre));
+       System.out.println("TEST UNITARIO quickSort LISTA decreciente :"+RunTests(listaDecreaux, listaDecre));
+       System.out.println("TEST UNITARIO quickSort Misma lista :"+RunTests(listaMismoaux, listaMismo));
+       
+        
+        
+         desOrdenarAleatoria();
+       listaaleaux = new ArrayList<>(listaale);
+       ordenadaCreciente();
+       listaCreaux = new ArrayList<>(listaCre);
+       ordenadaDecreciente();
+       listaDecreaux = new ArrayList<>(listaDecre);
+       listaMismoValor();
+       listaMismoaux = new ArrayList<>(listaMismo);
         
         media = 0;
         for(int i=0; i<cont; i++)
@@ -475,6 +544,13 @@ public class Sort {
             media+=duration;
         }
         System.out.println("Tiempo de metodo Merge Sort para el mismo numero : " + media/cont);
+        
+        System.out.println("TEST UNITARIO Merge Sort LISTA aleatoria :"+ RunTests(listaaleaux, listaale));
+       System.out.println("TEST UNITARIO Merge Sort LISTA creciente :"+RunTests(listaCreaux, listaCre));
+       System.out.println("TEST UNITARIO Merge Sort LISTA decreciente :"+RunTests(listaDecreaux, listaDecre));
+       System.out.println("TEST UNITARIO Merge Sort Misma lista :"+RunTests(listaMismoaux, listaMismo));
+       
+        
         desOrdenarAleatoria();
         ordenadaCreciente();
         ordenadaDecreciente();

@@ -1,0 +1,92 @@
+TIEMPOS DE LISTS
+
+Insertar un elemento al final de un Array: 1164.362
+Insertar un elemento al final de un Link: 363.341
+Insertar un elemento en el medio de un Array: 238.617
+Insertar un elemento en el medio de un Link: 3206.259
+Insertar un elemento al final de un Array: 171.402
+Insertar un elemento al final de un Link: 323.296
+Borrar un elemento al final de un Array: 232.998
+Borrar un elemento al final de un LINK: 374.606
+Borrar un elemento en el medio de un Array: 268.393
+Borrar un elemento en el medio de un Link: 996.033
+Borrar un elemento en el principio de un Array: 328.419
+Borrar un elemento en el principio de un LInk: 327.398
+Borramos un elemento por valor al principio de un Array: 835.426
+Borramos un elemento por valor al principio de una Link: 326.862
+Borramos un elemento por valor en el medio de un Array: 3449.47
+Borramos un elemento por valor en el medio de una Link: 2489.877
+Borramos un elemento por valor al final de una Link: 3252.941
+Borramos un elemento por valor al final de una Link: 3293.987
+Buscamos un elemento con funciones del Array: 7885.759
+Buscamos un elemento con funciones del Link: 7497.302
+Buscamos un elemento secuencial al principio Array: 12946.569
+Buscamos un elemento secuencial al princpio LInk: 372001.654
+Buscamos un elemento secuencial en  medio Array: 16351.919
+Buscamos un elemento secuencial en medio LInk: 397154.825
+Buscamos un elemento secuencial al final Array: 51.318
+Buscamos un elemento secuencial al final LInk: 401755.321
+Buscamos un elemento secuencial inexistente Array: 174.989
+Buscamos un elemento secuencial inexistente LInk: 412126.333
+Buscamos un elemento por busquedad binaria al principio Array: 1479.955
+Buscamos un elemento por busquedad binaria al principio Link: 4155.074
+Buscamos un elemento por busquedad binaria en medio Array: 1388.104
+Buscamos un elemento por busquedad binaria en medio Link: 12905.009
+Buscamos un elemento por busquedad binaria al final Array: 1625.186
+Buscamos un elemento por busquedad binaria al final Link: 4496.83
+Buscamos un elemento por busquedad binaria inexistente Array: 1631.342
+Buscamos un elemento por busquedad binaria inexistente Link: 4740.083
+El tiempo de vaciado de un Array: 238.108
+El tiempo de vaciado de un Array: 177.04
+
+
+TIEMPOS DE SORT
+
+Tiempo de metodo burbuja para lista aleatoria 5706933.501
+Tiempo de metodo burbuja para lista creciente 6812.748
+Tiempo de metodo burbuja para lista Decreciente 7161398.805
+Tiempo de metodo burbuja para Lista con mismo valor 4311.08
+TEST UNITARIO burbuja LISTA aleatoria :true
+TEST UNITARIO burbuja LISTA creciente :true
+TEST UNITARIO burbuja LISTA decreciente :true
+TEST UNITARIO burbuja Misma lista :true
+Tiempo de metodo Seleccion para lista aleatoria 46978.473
+Tiempo de metodo Seleccion para lista creciente 4807.824
+Tiempo de metodo Seleccion para lista Decreciente 4870.937
+Tiempo de metodo Seleccion para Lista con mismo valor 1419.402
+TEST UNITARIO Seleccion  LISTA aleatoria :true
+TEST UNITARIO Seleccion  LISTA creciente :true
+TEST UNITARIO Seleccion  LISTA decreciente :true
+TEST UNITARIO Seleccion  Misma lista :true
+Tiempo de metodo Insercion para lista aleatoria 3205766.301
+Tiempo de metodo Insercion para lista creciente 29693.644
+Tiempo de metodo Insercion para lista Decreciente 3186455.484
+Tiempo de metodo Insercion para Lista con mismo valor 9480.169
+TEST UNITARIO Insercion LISTA aleatoria :true
+TEST UNITARIO Insercion LISTA creciente :true
+TEST UNITARIO Insercion LISTA decreciente :true
+TEST UNITARIO Insercion Misma lista :true
+Tiempo de metodo quickSort para lista aleatoria : 59139.383
+Tiempo de metodo quickSort para lista creciente: 34843.73
+Tiempo de metodo quickSort para lista decreciente: 35721.233
+Tiempo de metodo quickSort para lista con Mismo valor: 63026.075
+TEST UNITARIO quickSort LISTA aleatoria :true
+TEST UNITARIO quickSort LISTA creciente :true
+TEST UNITARIO quickSort LISTA decreciente :true
+TEST UNITARIO quickSort Misma lista :true
+Tiempo de metodo Merge Sort para lista aleatoria : 239552.404
+Tiempo de metodo Merge Sort para lista creciente : 190039.928
+Tiempo de metodo Merge Sort para lista decreciente : 193242.083
+Tiempo de metodo Merge Sort para el mismo numero : 189435.424
+TEST UNITARIO Merge Sort LISTA aleatoria :true
+TEST UNITARIO Merge Sort LISTA creciente :true
+TEST UNITARIO Merge Sort LISTA decreciente :true
+TEST UNITARIO Merge Sort Misma lista :true
+Busqueda Binaria para lista aleatoria 1569.261
+Busqueda Binaria burbuja para lista creciente 1622.104
+Busqueda Binaria burbuja para lista Decreciente 1612.872
+Busqueda Binaria burbuja para Lista con mismo valor 1755.525
+Busqueda Secuencial para lista aleatoria 13161.074
+Busqueda Secuencial burbuja para lista creciente 15262.477
+Busqueda Secuencial burbuja para lista Decreciente 11502.017
+Busqueda Secuencial burbuja para Lista con mismo valor 1817.11
